@@ -1,0 +1,15 @@
+*.class
+**/target
+**/bin
+**/out
+**/build
+
+# Eclipse files
+**/.settings
+*.classpath
+*.project
+**/.metadata
+
+# IntelliJ files
+*.iml
+**/.idea
