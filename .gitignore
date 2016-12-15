@@ -1,1 +1,14 @@
-/build
+*.class
+**/target
+**/bin
+**/out
+
+# Eclipse files
+**/.settings
+*.classpath
+*.project
+**/.metadata
+
+# IntelliJ files
+*.iml
+**/.idea
