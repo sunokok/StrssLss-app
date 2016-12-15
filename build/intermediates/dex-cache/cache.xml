@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.github.JakeWharton/ViewPagerIndicator/2.4.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="14889e022db94047ceadff1cf5e7984139a4eb8e">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/com.github.JakeWharton-ViewPagerIndicator-2.4.1_1d809a1c4ecd841c4a357b8127b6fdb18ec65dd4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.0.1_955a77a49459c501ebe76a93fbda41e831394885.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.0.1_fd095927a9f1f72fa042491ba8c646c0def7e627.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_43b892f9b35baf96ab8ca68eb5a4f807b27940ac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.1/support-annotations-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/support-annotations-25.0.1_cf318b8dfb4f08af85dd8e575285ed45171d8099.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.4.0/ea392375cf9ff59234a82e7928a204215ccc98cd/butterknife-annotations-8.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ea392375cf9ff59234a82e7928a204215ccc98cd">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/butterknife-annotations-8.4.0_77ef52e4c06cf2a859553209bfd28ad9987d8d07.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_8a2538b1990b82c4d0e598f55676c956d1b33968.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_d59800fbc495c4e0bc463ae7197d0a9352f1bde3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.0.1_7ccdd1e7534fc6e8625d93fe47e16f4a55bb84b6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_2c4db62fc1f629a34b34a113a8c568c6e9b90ae3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.0.1_53f0c77ecf2068defb4733f70dcd180e192a1ddb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.0.1_10b4cf41e7e0f849046f8af5a5683ec65bc6f279.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.0.1_8d7146281042a63300291eb91bfa50292e4f6b50.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_885541b5e7bed07c5a886e82f9840bd60eda70d9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a07818a1ecabdb149998823429cce555af4b9cba">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/com.jakewharton-butterknife-8.4.0_1e0bd5f94979b64e0483f27798d9f36503240dbc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-25.0.1_84aee99cf06b07c6cdf319ca0b5ebac2cc9bda16.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.0.1_14d13e1e9d542a9b653e824f900e4be916e74dc9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/com.android.support-transition-25.0.1_9442106dbedc07a841ef37c4ca9335871139b3d9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/com.android.support-design-25.0.1_e0e6dcde39f125cbf29e25abf455e476a0efdde2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.0.1_c2e91e6239775904277385a4ca4ed8d40bf5daf3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="/Users/SunOK/Desktop/Project Time/StrssLss/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.0.1_fc93676a480fa276bb1bd9e01618a71d311417b2.jar" />
+    </item>
+
+</items>

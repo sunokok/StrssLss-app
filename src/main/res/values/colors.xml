@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#F4F4F4</color>
+    <color name="colorAccent">#EB6624</color>
+    <color name="colorAccentDark">#cd5113</color>
+
+    <color name="colorPrimaryInverse">#888888</color>
+
+    <color name="backgroundWhite">#FFFFFF</color>
+    <color name="backgroundGreyLightest">#f1f1f1</color>
+    <color name="backgroundGreyLight">#E5E5E5</color>
+    <color name="backgroundGreyMedium">#C1C1C1</color>
+    <color name="backgroundGreyDark">#919191</color>
+    <color name="backgroundBlue">#E1E8EE</color>
+
+    <color name="default_text_color">#808080</color>
+
+    <color name="textOrange">@color/colorAccent</color>
+    <color name="textDark">#000000</color>
+    <color name="dividerGrey">#e1e1e1</color>
+
+    <color name="progress_green">#2f7e43</color>
+    <color name="progress_light_green">#bfca4f</color>
+    <color name="progress_yellow">#e4cd15</color>
+    <color name="progress_red">#c02222</color>
+    <color name="progress_dark_red">#9b0a0a</color>
+    <color name="transparent">#00ffffff</color>
+</resources>
