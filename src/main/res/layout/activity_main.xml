@@ -8,26 +8,10 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-
-    <!-- This LinearLayout represents the contents of the screen  -->
-    <LinearLayout
+    <include
+        layout="@layout/app_bar_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-        <include
-            layout="@layout/app_bar_main"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <!-- The main content view where fragments are loaded -->
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
+        android:layout_height="match_parent" />
 
 
     <android.support.design.widget.NavigationView

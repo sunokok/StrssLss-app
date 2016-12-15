@@ -1,6 +1,7 @@
 package com.strsslss.ui;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,19 +15,18 @@ import com.strsslss.R;
 
 public class OverviewFragment extends Fragment {
 
-    public static OverviewFragment newInstance(){
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        OverviewFragment overviewFragment = new OverviewFragment();
-        return overviewFragment;
+        return inflater.inflate(R.layout.fragment_overview, container, false);
     }
-
-    public OverviewFragment(){}
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInsanceState){
-        View rootView = inflater.inflate(R.layout.fragment_overview, container, false);
-        return rootView;
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        //you can set the title for your toolbar here for different fragments different titles
+        getActivity().setTitle("Data Overview");
     }
-
 }
