@@ -27,14 +27,30 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 /**
  * Created by SunOK on 13/12/2016.
  */
 
 public class HomeFragment extends Fragment {
 
+    @BindView(R.id.buttonStart)
+    Button startButton;
+
+    @BindView(R.id.buttonSend)
+    Button sendButton;
+
+    @BindView(R.id.buttonClear)
+    Button clearButton;
+
+    @BindView(R.id.buttonStop)
+    Button stopButton;
+
     public final String ACTION_USB_PERMISSION = "com.hariharan.arduinousb.USB_PERMISSION";
-    Button startButton, sendButton, clearButton, stopButton;
+
     TextView textView;
     EditText editText;
     UsbManager usbManager;
@@ -48,11 +64,8 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View rootView = inflater.inflate(R.layout.fragment_home , container, false);
 
+        ButterKnife.bind(this, rootView);
         usbManager = (UsbManager) getContext().getSystemService(getActivity().USB_SERVICE);
-        startButton = (Button) rootView.findViewById(R.id.buttonStart);
-        sendButton = (Button) rootView.findViewById(R.id.buttonSend);
-        clearButton = (Button) rootView.findViewById(R.id.buttonClear);
-        stopButton = (Button) rootView.findViewById(R.id.buttonStop);
         editText = (EditText) rootView.findViewById(R.id.editText);
         textView = (TextView) rootView.findViewById(R.id.textView);
         setUiEnabled(false);
@@ -117,9 +130,9 @@ public class HomeFragment extends Fragment {
                     Log.d("SERIAL", "PERM NOT GRANTED");
                 }
             } else if (intent.getAction().equals(UsbManager.ACTION_USB_DEVICE_ATTACHED)) {
-                onClickStart(startButton);
+                onClickStart();
             } else if (intent.getAction().equals(UsbManager.ACTION_USB_DEVICE_DETACHED)) {
-                onClickStop(stopButton);
+                onClickStop();
 
             }
         }
@@ -134,7 +147,8 @@ public class HomeFragment extends Fragment {
 
     }
 
-    public void onClickStart(View view) {
+    @OnClick(R.id.buttonStart)
+    public void onClickStart() {
 
         HashMap<String, UsbDevice> usbDevices = usbManager.getDeviceList();
         if (!usbDevices.isEmpty()) {
@@ -160,21 +174,24 @@ public class HomeFragment extends Fragment {
 
     }
 
-    public void onClickSend(View view) {
+    @OnClick(R.id.buttonSend)
+    public void onClickSend() {
         String string = editText.getText().toString();
         serialPort.write(string.getBytes());
         tvAppend(textView, "\nData Sent : " + string + "\n");
 
     }
 
-    public void onClickStop(View view) {
+    @OnClick(R.id.buttonStop)
+    public void onClickStop() {
         setUiEnabled(false);
         serialPort.close();
         tvAppend(textView,"\nSerial Connection Closed! \n");
 
     }
 
-    public void onClickClear(View view) {
+    @OnClick(R.id.buttonClear)
+    public void onClickClear() {
         textView.setText(" ");
     }
 
