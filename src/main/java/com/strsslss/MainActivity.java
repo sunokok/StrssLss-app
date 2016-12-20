@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.strsslss.ui.ExerciseFragment;
 import com.strsslss.ui.HomeFragment;
 import com.strsslss.ui.OverviewFragment;
 
@@ -81,9 +82,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_data_overview:
                 fragment = new OverviewFragment();
                 break;
-//          case R.id.nav_exercise:
-//              fragment = ExerciseFragment.newInstance();
-//              break;
+          case R.id.nav_exercise:
+              fragment = new ExerciseFragment();
+              break;
 //          case R.id.nav_post_exercise:
 //              fragment = PostExerciseFragment.newInstance();
 //              break;
