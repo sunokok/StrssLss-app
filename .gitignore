@@ -4,6 +4,7 @@
 **/out
 **/build
 local.properties
+*.log
 
 # Eclipse files
 **/.settings
