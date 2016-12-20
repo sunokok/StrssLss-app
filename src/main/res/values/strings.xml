@@ -12,6 +12,11 @@
     <string name="menu_settings">Settings</string>
     <string name="menu_positive">Positive</string>
 
+    <!-- fragment exercise -->
+    <string name="exercise_start">Start exercise</string>
+    <string name="exercise_name">Breathing exercise</string>
+    <string name="exercise_running">Keep going!</string>
+    <string name="exercise_done">You finished the exercise! How do you feel yourself now?</string>
 
 
 </resources>
