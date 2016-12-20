@@ -55,7 +55,7 @@ public class ExerciseLog implements Serializable {
 
     private void fillLog() {
         for (int i = 0; i < 15; i++) {
-            log.add(new ExerciseBean("Item " + i, System.currentTimeMillis()));
+            log.add(new ExerciseBean("Item " + i, (int) (Math.random() * 10)));
         }
     }
 

@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RatingBar;
 
+import com.strsslss.ExerciseBean;
+import com.strsslss.ExerciseLog;
 import com.strsslss.R;
 
 import butterknife.BindView;
@@ -43,8 +45,6 @@ public class ExerciseDoneFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
         getActivity().setTitle("Exercise Done!");
-        ratingBar.setRating(10);
-
         ratingBarListener();
     }
 
@@ -52,10 +52,22 @@ public class ExerciseDoneFragment extends Fragment {
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
-                System.out.println("Test");
-
+                endExercise();
             }
         });
+    }
+
+    public void endExercise(){
+        ExerciseBean eb = new ExerciseBean("Breathing Exercise", (int) ratingBar.getRating());
+        ExerciseLog log = new ExerciseLog(getContext());
+        log.addExercise(eb);
+
+        Fragment fragment = new PostExerciseFragment();
+        if (fragment != null) {
+            FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.fragment_container, fragment);
+            ft.commit();
+        }
     }
 
 }

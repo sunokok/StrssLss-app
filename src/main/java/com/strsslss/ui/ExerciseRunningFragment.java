@@ -24,7 +24,7 @@ public class ExerciseRunningFragment extends Fragment {
 
     @BindView(R.id.progressBar2)
     ProgressBar progressBar;
-    static int runningSec = 5;
+    static int runningSec = 60;
 
     @Nullable
     @Override
