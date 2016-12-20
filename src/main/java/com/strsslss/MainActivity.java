@@ -20,6 +20,7 @@ import com.strsslss.ui.OverviewFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import com.strsslss.ui.PostExerciseFragment;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -88,12 +89,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_data_overview:
                 fragment = new OverviewFragment();
                 break;
-          case R.id.nav_exercise:
-              fragment = new ExerciseFragment();
-              break;
-//          case R.id.nav_post_exercise:
-//              fragment = PostExerciseFragment.newInstance();
-//              break;
+            case R.id.nav_exercise:
+                fragment = new ExerciseFragment();
+                break;
+            case R.id.nav_post_exercise:
+                fragment = new PostExerciseFragment();
+                break;
 //          case R.id.nav_settings:
 //              fragment = SettingsFragment.newInstance();
 //              break;
