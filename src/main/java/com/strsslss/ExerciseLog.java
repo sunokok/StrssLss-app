@@ -36,6 +36,11 @@ public class ExerciseLog implements Serializable {
         }
     }
 
+    public void addExercise(ExerciseBean bean) {
+        log.add(bean);
+        writeLog();
+    }
+
     private void writeLog() {
         try {
             File file = new File(context.getFilesDir(), "exercise_log");
