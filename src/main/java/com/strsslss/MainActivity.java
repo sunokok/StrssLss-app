@@ -16,7 +16,7 @@ import android.view.MenuItem;
 
 import com.strsslss.ui.HomeFragment;
 import com.strsslss.ui.OverviewFragment;
-
+import com.strsslss.ui.PostExerciseFragment;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -84,9 +84,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //          case R.id.nav_exercise:
 //              fragment = ExerciseFragment.newInstance();
 //              break;
-//          case R.id.nav_post_exercise:
-//              fragment = PostExerciseFragment.newInstance();
-//              break;
+            case R.id.nav_post_exercise:
+                fragment = new PostExerciseFragment();
+                break;
 //          case R.id.nav_settings:
 //              fragment = SettingsFragment.newInstance();
 //              break;
