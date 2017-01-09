@@ -20,7 +20,6 @@ import com.strsslss.R;
 
 public class PostExerciseFragment extends ListFragment {
 
-    private ExerciseLog log;
     private ExerciseBean[] list;
 
     @Nullable
@@ -28,7 +27,7 @@ public class PostExerciseFragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.listview, container, false);
 
-        log = new ExerciseLog(this.getContext().getFilesDir().getAbsolutePath());
+        ExerciseLog log = new ExerciseLog(this.getContext().getFilesDir().getAbsolutePath());
 
         Object[] exercises = log.getLog().toArray();
         String[] values = new String[exercises.length];
