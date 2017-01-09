@@ -53,15 +53,13 @@ public class PostExerciseFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView parent, View view, int position, long id) {
-        //String itemValue = (String) getListView().getItemAtPosition(position);
-        //Toast.makeText(getContext(), "Position : " + position + ", ListItem : " + itemValue , Toast.LENGTH_LONG).show();
-        LogExerciseEntryFragment fragment = new LogExerciseEntryFragment();
         ExerciseBean bean = list[position];
         Bundle args = new Bundle();
         args.putSerializable("bean", bean);
-        fragment.setArguments(args);
 
         FragmentTransaction ft = this.getActivity().getSupportFragmentManager().beginTransaction();
+        LogExerciseEntryFragment fragment = new LogExerciseEntryFragment();
+        fragment.setArguments(args);
         ft.replace(R.id.fragment_container, fragment);
         ft.commit();
     }
