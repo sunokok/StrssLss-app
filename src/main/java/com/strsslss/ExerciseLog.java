@@ -29,7 +29,7 @@ public class ExerciseLog implements Serializable {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
             this.log = new ArrayList<>();
-            fillLog();
+            //fillLog();
             writeLog();
         }
     }
