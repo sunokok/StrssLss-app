@@ -21,11 +21,10 @@ public class ExerciseLog implements Serializable {
     private List<ExerciseBean> log;
     private String filePath;
 
-    public ExerciseLog(String filePath) {
-        this.filePath = filePath + "exercise_log";
+    public ExerciseLog(String absolutePath) {
+        this.filePath = absolutePath + "/exercise_log";
         try {
             FileInputStream fileInputStream = new FileInputStream(new File(filePath));
-            //FileInputStream fileInputStream = new FileInputStream(new File("/data/user/0/com.strsslss/files/exercise_log"));
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             ExerciseLog readObject = (ExerciseLog) objectInputStream.readObject();
             this.log = readObject.getLog();
@@ -45,8 +44,6 @@ public class ExerciseLog implements Serializable {
     private void writeLog() {
         try {
             File file = new File(filePath);
-            //File file = new File("/data/user/0/com.strsslss/files/exercise_log");
-            //System.out.println(file.getAbsolutePath());
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(this);

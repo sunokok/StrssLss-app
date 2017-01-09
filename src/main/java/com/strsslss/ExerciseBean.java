@@ -1,7 +1,9 @@
 package com.strsslss;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by saul on 20-12-16.
@@ -26,6 +28,9 @@ public class ExerciseBean implements Serializable {
     }
 
     public String toString() {
-        return title + "\n\n" + new Date(time).toString() + "\n\n<Extra info or whatever>";
+        Date date = new Date(time);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, MMM d, ''yy", Locale.ENGLISH);
+        SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a", Locale.ENGLISH);
+        return title + "\n\n" + dateFormat.format(date) + "\n" + timeFormat.format(date) + "\n\n<Extra info or whatever>";
     }
 }
