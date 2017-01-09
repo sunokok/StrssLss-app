@@ -59,7 +59,7 @@ public class ExerciseDoneFragment extends Fragment {
 
     public void endExercise(){
         ExerciseBean eb = new ExerciseBean("Breathing Exercise", (int) ratingBar.getRating());
-        ExerciseLog log = new ExerciseLog(getContext());
+        ExerciseLog log = new ExerciseLog(this.getContext().getFilesDir().getAbsolutePath());
         log.addExercise(eb);
 
         Fragment fragment = new PostExerciseFragment();
