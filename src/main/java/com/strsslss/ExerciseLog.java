@@ -1,7 +1,5 @@
 package com.strsslss;
 
-import android.content.Context;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -19,12 +17,12 @@ import java.util.List;
 public class ExerciseLog implements Serializable {
 
     private List<ExerciseBean> log;
-    private Context context;
+    private String filePath;
 
-    public ExerciseLog(Context context) {
-        this.context = context;
+    public ExerciseLog(String absolutePath) {
+        this.filePath = absolutePath + "/exercise_log";
         try {
-            FileInputStream fileInputStream = new FileInputStream(new File(context.getFilesDir(), "exercise_log"));
+            FileInputStream fileInputStream = new FileInputStream(new File(filePath));
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             ExerciseLog readObject = (ExerciseLog) objectInputStream.readObject();
             this.log = readObject.getLog();
@@ -43,8 +41,7 @@ public class ExerciseLog implements Serializable {
 
     private void writeLog() {
         try {
-            File file = new File(context.getFilesDir(), "exercise_log");
-            //System.out.println(file.getAbsolutePath());
+            File file = new File(filePath);
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(this);
