@@ -1,6 +1,7 @@
 package com.strsslss;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by saul on 20-12-16.
@@ -8,8 +9,8 @@ import java.io.Serializable;
 
 public class ExerciseBean implements Serializable {
 
-    String title;
-    long time;
+    private String title;
+    private long time;
 
     public ExerciseBean(String title, long time) {
         this.title = title;
@@ -22,5 +23,9 @@ public class ExerciseBean implements Serializable {
 
     public long getTime() {
         return time;
+    }
+
+    public String toString() {
+        return title + "\n\n" + new Date(time).toString() + "\n\n<Extra info or whatever>";
     }
 }

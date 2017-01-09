@@ -1,25 +1,27 @@
 package com.strsslss.ui;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.PopupWindow;
-import android.widget.Toast;
 
 import com.strsslss.ExerciseBean;
 import com.strsslss.ExerciseLog;
 import com.strsslss.R;
 
+/**
+ * Created by saul on 20-12-16.
+ */
+
 public class PostExerciseFragment extends ListFragment {
 
-    ExerciseLog log;
+    private ExerciseLog log;
+    private ExerciseBean[] list;
 
     @Nullable
     @Override
@@ -30,9 +32,11 @@ public class PostExerciseFragment extends ListFragment {
 
         Object[] exercises = log.getLog().toArray();
         String[] values = new String[exercises.length];
+        list = new ExerciseBean[exercises.length];
         for (int i = 0; i < exercises.length; i++) {
             ExerciseBean temp = (ExerciseBean) exercises[i];
             values[i] = temp.getTitle();
+            list[i] = temp;
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, android.R.id.text1, values);
@@ -51,11 +55,15 @@ public class PostExerciseFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView parent, View view, int position, long id) {
         //String itemValue = (String) getListView().getItemAtPosition(position);
-        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-        PopupWindow pw = new PopupWindow(inflater.inflate(R.layout.popup, null, false),100,100, true);
-
-        pw.showAtLocation(parent, Gravity.CENTER, 0, 0);
         //Toast.makeText(getContext(), "Position : " + position + ", ListItem : " + itemValue , Toast.LENGTH_LONG).show();
+        LogExerciseEntryFragment fragment = new LogExerciseEntryFragment();
+        ExerciseBean bean = list[position];
+        Bundle args = new Bundle();
+        args.putSerializable("bean", bean);
+        fragment.setArguments(args);
+
+        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.fragment_container, fragment);
+        ft.commit();
     }
 }
