@@ -6,8 +6,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.strsslss.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by SunOK on 15/12/2016.
@@ -15,11 +19,18 @@ import com.strsslss.R;
 
 public class OverviewFragment extends Fragment {
 
+
+    @BindView(R.id.heartImageView)
+    ImageView heartView;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_overview, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_overview, container, false);
+        ButterKnife.bind(this, rootView);
+
+        return rootView;
     }
 
 

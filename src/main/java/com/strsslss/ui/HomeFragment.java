@@ -5,6 +5,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbDeviceConnection;
 import android.hardware.usb.UsbManager;
@@ -17,10 +19,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.cardiomood.android.controls.progress.CircularProgressBar;
 import com.felhr.usbserial.UsbSerialDevice;
 import com.felhr.usbserial.UsbSerialInterface;
+import com.github.yongjhih.mismeter.MisMeter;
 import com.strsslss.R;
 
 import java.io.UnsupportedEncodingException;
@@ -38,7 +43,7 @@ import butterknife.OnClick;
 public class HomeFragment extends Fragment {
 
     @BindView(R.id.buttonStart)
-    Button startButton;
+    Button beginButton;
 
     @BindView(R.id.buttonSend)
     Button sendButton;
@@ -49,10 +54,18 @@ public class HomeFragment extends Fragment {
     @BindView(R.id.buttonStop)
     Button stopButton;
 
+    @BindView(R.id.editTextSerial)
+    EditText editTextSerial;
+
+
     public final String ACTION_USB_PERMISSION = "com.hariharan.arduinousb.USB_PERMISSION";
 
-    TextView textView;
-    EditText editText;
+    @BindView(R.id.textViewSerial)
+    TextView textViewSerial;
+
+    @BindView(R.id.meter)
+    CircularProgressBar meter;
+
     UsbManager usbManager;
     UsbDevice device;
     UsbSerialDevice serialPort;
@@ -63,18 +76,29 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View rootView = inflater.inflate(R.layout.fragment_home , container, false);
-
         ButterKnife.bind(this, rootView);
+
         usbManager = (UsbManager) getContext().getSystemService(getActivity().USB_SERVICE);
-        editText = (EditText) rootView.findViewById(R.id.editText);
-        textView = (TextView) rootView.findViewById(R.id.textView);
         setUiEnabled(false);
+
         IntentFilter filter = new IntentFilter();
         filter.addAction(ACTION_USB_PERMISSION);
         filter.addAction(UsbManager.ACTION_USB_DEVICE_ATTACHED);
         filter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);
 
         getActivity().registerReceiver(broadcastReceiver, filter);
+
+        meter.setLabelConverter(new CircularProgressBar.LabelConverter() {
+            @Override
+            public String getLabelFor(float progress, float max, Paint paint) {
+                return "Moderate";
+            }
+        });
+        meter.setLineWidth(6);
+        meter.setColor(Color.BLUE);
+        meter.setTextColor(Color.BLUE);
+        meter.setMin(0);
+        meter.setProgress(40);
 
         return rootView;
     }
@@ -83,7 +107,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
-        getActivity().setTitle("Home Fragment");
+        getActivity().setTitle("Home");
     }
 
     UsbSerialInterface.UsbReadCallback mCallback = new UsbSerialInterface.UsbReadCallback() { //Defining a Callback which triggers whenever data is read.
@@ -93,7 +117,7 @@ public class HomeFragment extends Fragment {
             try {
                 data = new String(arg0, "UTF-8");
                 data.concat("/n");
-                tvAppend(textView, data);
+                tvAppend(textViewSerial, data);
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
@@ -101,6 +125,7 @@ public class HomeFragment extends Fragment {
 
         }
     };
+
     private final BroadcastReceiver broadcastReceiver = new BroadcastReceiver() { //Broadcast Receiver to automatically start and stop the Serial connection.
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -117,8 +142,10 @@ public class HomeFragment extends Fragment {
                             serialPort.setStopBits(UsbSerialInterface.STOP_BITS_1);
                             serialPort.setParity(UsbSerialInterface.PARITY_NONE);
                             serialPort.setFlowControl(UsbSerialInterface.FLOW_CONTROL_OFF);
+
+                            // Reading from the serial port
                             serialPort.read(mCallback);
-                            tvAppend(textView,"Serial Connection Opened!\n");
+                            tvAppend(textViewSerial,"Serial Connection Opened!\n");
 
                         } else {
                             Log.d("SERIAL", "PORT NOT OPEN");
@@ -130,7 +157,7 @@ public class HomeFragment extends Fragment {
                     Log.d("SERIAL", "PERM NOT GRANTED");
                 }
             } else if (intent.getAction().equals(UsbManager.ACTION_USB_DEVICE_ATTACHED)) {
-                onClickStart();
+                onClickBegin();
             } else if (intent.getAction().equals(UsbManager.ACTION_USB_DEVICE_DETACHED)) {
                 onClickStop();
 
@@ -139,16 +166,16 @@ public class HomeFragment extends Fragment {
 
         ;
     };
-    public void setUiEnabled(boolean bool) {
-        startButton.setEnabled(!bool);
-        sendButton.setEnabled(bool);
-        stopButton.setEnabled(bool);
-        textView.setEnabled(bool);
 
+    public void setUiEnabled(boolean bool) {
+        beginButton.setEnabled(!bool);
+        sendButton.setEnabled(!bool);
+        stopButton.setEnabled(bool);
+        textViewSerial.setEnabled(bool);
     }
 
     @OnClick(R.id.buttonStart)
-    public void onClickStart() {
+    public void onClickBegin() {
 
         HashMap<String, UsbDevice> usbDevices = usbManager.getDeviceList();
         if (!usbDevices.isEmpty()) {
@@ -174,25 +201,26 @@ public class HomeFragment extends Fragment {
 
     }
 
+    // send will be used to send the start breathing function
     @OnClick(R.id.buttonSend)
     public void onClickSend() {
-        String string = editText.getText().toString();
-        serialPort.write(string.getBytes());
-        tvAppend(textView, "\nData Sent : " + string + "\n");
-
+        String string = editTextSerial.getText().toString() + "\n";
+        serialPort.write("B".getBytes());
+        // print the sent data - useful for debugging
+        // tvAppend(textViewSerial, "\nData Sent : " + string + "\n");
     }
 
     @OnClick(R.id.buttonStop)
     public void onClickStop() {
         setUiEnabled(false);
         serialPort.close();
-        tvAppend(textView,"\nSerial Connection Closed! \n");
 
+        tvAppend(textViewSerial,"\nSerial Connection Closed! \n");
     }
 
     @OnClick(R.id.buttonClear)
     public void onClickClear() {
-        textView.setText(" ");
+        textViewSerial.setText(" ");
     }
 
     private void tvAppend(TextView tv, CharSequence text) {
