@@ -28,7 +28,7 @@ public class PostExerciseFragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.listview, container, false);
 
-        log = new ExerciseLog();
+        log = new ExerciseLog(this.getContext().getFilesDir().getAbsolutePath());
 
         Object[] exercises = log.getLog().toArray();
         String[] values = new String[exercises.length];
@@ -39,7 +39,7 @@ public class PostExerciseFragment extends ListFragment {
             list[i] = temp;
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, android.R.id.text1, values);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this.getContext(), android.R.layout.simple_list_item_1, android.R.id.text1, values);
         setListAdapter(adapter);
 
         return view;
@@ -49,7 +49,7 @@ public class PostExerciseFragment extends ListFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
-        getActivity().setTitle("Post Exercise");
+        this.getActivity().setTitle("Post Exercise");
     }
 
     @Override
@@ -62,7 +62,7 @@ public class PostExerciseFragment extends ListFragment {
         args.putSerializable("bean", bean);
         fragment.setArguments(args);
 
-        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+        FragmentTransaction ft = this.getActivity().getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.fragment_container, fragment);
         ft.commit();
     }
