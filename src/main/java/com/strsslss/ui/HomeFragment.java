@@ -91,14 +91,14 @@ public class HomeFragment extends Fragment {
         meter.setLabelConverter(new CircularProgressBar.LabelConverter() {
             @Override
             public String getLabelFor(float progress, float max, Paint paint) {
-                return "Moderate";
+                return "Calm";
             }
         });
         meter.setLineWidth(6);
         meter.setColor(Color.BLUE);
         meter.setTextColor(Color.BLUE);
         meter.setMin(0);
-        meter.setProgress(40);
+        meter.setProgress(25);
 
         return rootView;
     }

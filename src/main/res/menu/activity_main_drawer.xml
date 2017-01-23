@@ -14,12 +14,6 @@
         <item
             android:id="@+id/nav_post_exercise"
             android:title="@string/menu_post_exercise" />
-        <item
-            android:id="@+id/nav_settings"
-            android:title="@string/menu_settings" />
-        <item
-            android:id="@+id/nav_positive"
-            android:title="@string/menu_positive" />
     </group>
 
 </menu>

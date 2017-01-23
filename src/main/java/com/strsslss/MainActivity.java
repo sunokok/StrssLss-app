@@ -98,9 +98,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //          case R.id.nav_settings:
 //              fragment = SettingsFragment.newInstance();
 //              break;
-//          case R.id.nav_exercise:
-//              fragment = ExerciseFragment.newInstance();
-//              break;
 //          case R.id.nav_positive:
 //              fragment = PositiveFragment.newInstance();
 //                break;

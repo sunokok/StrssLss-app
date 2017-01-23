@@ -21,6 +21,13 @@
 
     <!-- data overview exercise -->
     <string name="example_heartbeat">87 bpm</string>
-    <string name="example_sleeptime">7.5 hours</string>
+    <string name="example_sleep">7.5 hours</string>
+    <string name="example_exercise">30 minutes</string>
+    <string name="current_data"> Hey Sun! \nHere is your data overview for today: </string>
+
+    <!-- home -->
+    <string name="example_date">10th of January</string>
+    <string name="current_stress_level">Hey Sun! \nYour current stress level \non 10th of January is: </string>
+    <string name="goto_data_overview">Please go to data overview for more detailed information </string>
 
 </resources>
